@@ -1,11 +1,11 @@
 'use client'
 
-import { Fragment, useState } from 'react'
+import { FormEvent, Fragment, useState } from 'react'
 
 export default function Shortener() {
   const [ yurl, setYurl ] = useState<string>('')
 
-  const shorten = (e: Event): void => {
+  const shorten = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     e.stopPropagation()
     setYurl((e.target as HTMLFormElement).longYurl.value)
