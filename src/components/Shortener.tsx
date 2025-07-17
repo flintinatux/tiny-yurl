@@ -31,7 +31,7 @@ export default function Shortener() {
   const updateYurl = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setError('')
     setShortened(false)
-    setYurl(event.target.value)
+    setYurl(event.target.value.trim())
   }
 
   return (
