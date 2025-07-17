@@ -3,6 +3,8 @@
 import { Fragment, useState } from 'react'
 import * as z from 'zod/mini'
 
+import TinyYurl from '@/components/TinyYurl'
+
 const schema = z.url({
   protocol: /^https?$/,
   hostname: z.regexes.domain
@@ -13,7 +15,7 @@ export default function Shortener() {
   const [ shortened, setShortened ] = useState<boolean>(false)
   const [ yurl, setYurl ] = useState<string>('')
 
-  const shorten = async (): void => {
+  const shorten = (): void => {
     if (!yurl) return
 
     try {
@@ -45,14 +47,7 @@ export default function Shortener() {
         </div>
       }
 
-      {
-        shortened && <div className="mt-2">
-          <p className="text-sm text-gray-500">Shortened yurl:</p>
-          <a className="text-blue-700 hover:text-blue-800" href={yurl} target="_blank" rel="noopener noreferrer">
-            {yurl}
-          </a>
-        </div>
-      }
+      { shortened && <TinyYurl yurl={yurl} /> }
     </Fragment>
   )
 }
