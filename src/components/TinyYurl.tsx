@@ -2,7 +2,11 @@
 
 import useSWR from 'swr'
 
-const fetcher = (yurl: string): Promise<string> =>
+interface TinyResponse {
+  tiny: string
+}
+
+const fetcher = (yurl: string): Promise<TinyResponse> =>
   fetch('/api/shorten', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -10,7 +14,7 @@ const fetcher = (yurl: string): Promise<string> =>
   }).then(res => res.json())
 
 export default function TinyYurl({ yurl }: { yurl: string }) {
-  const { data, error } = useSWR(yurl, fetcher)
+  const { data, error, isLoading } = useSWR(yurl, fetcher)
 
   if (error) {
     return (
@@ -20,7 +24,7 @@ export default function TinyYurl({ yurl }: { yurl: string }) {
     )
   }
 
-  if (!data) {
+  if (isLoading) {
     return (
       <div className="mt-2">
         <p className="text-sm text-gray-500">Shortening yurl...</p>
@@ -31,8 +35,8 @@ export default function TinyYurl({ yurl }: { yurl: string }) {
   return (
     <div className="mt-2">
       <p className="text-sm text-gray-500">Shortened yurl:</p>
-      <a className="text-blue-700 hover:text-blue-800" href={data.tiny} target="_blank" rel="noopener noreferrer">
-        {data.tiny}
+      <a className="text-blue-700 hover:text-blue-800" href={data?.tiny} target="_blank" rel="noopener noreferrer">
+        {data?.tiny}
       </a>
     </div>
   )
