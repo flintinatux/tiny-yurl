@@ -14,7 +14,7 @@ const fetcher = (yurl: string): Promise<TinyResponse> =>
   }).then(res => res.json())
 
 export default function TinyYurl({ yurl }: { yurl: string }) {
-  const { data, error, isLoading } = useSWR(yurl, fetcher)
+  const { data, error, isLoading } = useSWR(yurl, fetcher, { errorRetryCount: 5 })
 
   if (error) {
     return (

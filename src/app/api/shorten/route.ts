@@ -17,7 +17,7 @@ const thirtyDays = 30 * 24 * 60 * 60
 export const POST = async (request: Request): Promise<Response> => {
   const { yurl } = schema.parse(await request.json())
 
-  let tiny = await redis.get(`${prefix}|long|${yurl}`)
+  let tiny = await redis.get<string>(`${prefix}|long|${yurl}`)
 
   if (!tiny) {
     tiny = `${request.headers.get('origin')}/t/${uid(8)}`
