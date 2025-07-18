@@ -1,3 +1,4 @@
+import FAQs from '@/components/FAQs'
 import Shortener from '@/components/Shortener'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         <p className="italic my-2 text-center">Makes all your yurls the tiniest of tiny.</p>
         <Shortener />
       </section>
+      <FAQs />
     </main>
   )
 }

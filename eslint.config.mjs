@@ -15,6 +15,7 @@ const eslintConfig = [
     rules: {
       indent: ["error", 2],
       quotes: ["error", "single", { "allowTemplateLiterals": true }],
+      "react/no-unescaped-entities": 0,
       semi: ["error", "never"]
     }
   }
