@@ -27,3 +27,8 @@ body {
   /*font-size: 1.6rem;*/
   position: relative;
 }
+
+.material-icons {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}

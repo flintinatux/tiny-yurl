@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist_Mono, Noto_Sans } from 'next/font/google'
+
 import './globals.css'
 
 const sans = Noto_Sans({
@@ -24,6 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      </head>
       <body
         className={`${sans.variable} ${mono.variable} antialiased`}
       >
