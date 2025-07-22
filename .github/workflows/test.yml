@@ -20,18 +20,12 @@ jobs:
         image: hiett/serverless-redis-http:latest
         env:
           SRH_MODE: env
-          SRH_TOKEN: ${{ env.SRH_TOKEN }}
+          SRH_TOKEN: ${{ secrets.SRH_TOKEN }}
           SRH_CONNECTION_STRING: redis://redis:6379
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 24
-      #     cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -40,5 +34,5 @@ jobs:
         run: npm run test:ci
         env:
           KV_REST_API_URL: http://srh:80
-          KV_REST_API_TOKEN: ${{ env.SRH_TOKEN }}
+          KV_REST_API_TOKEN: ${{ secrets.SRH_TOKEN }}
           SERVICE_NAME: tiny-url
