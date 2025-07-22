@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "dotenvx run -f .env.test -- vitest --reporter=dot",
+    "test:ci": "vitest --reporter=verbose"
   },
   "dependencies": {
     "@upstash/redis": "^1.35.1",
@@ -20,6 +21,7 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^1.48.3",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
