@@ -5,7 +5,6 @@ import { POST } from '@/app/api/shorten/route'
 import redis from '@/lib/redis'
 
 const endpoint = 'http://localhost:3000/api/shorten'
-const UID = 'abcd1234'
 
 const req = (yurl: string): Request =>
   new Request(endpoint, {
