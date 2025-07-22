@@ -41,4 +41,4 @@ jobs:
         env:
           KV_REST_API_URL: http://srh:80
           KV_REST_API_TOKEN: ${{ env.SRH_TOKEN }}
-          SERVICE_NAME=tiny-url
+          SERVICE_NAME: tiny-url
