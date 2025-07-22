@@ -1,6 +1,7 @@
 import { uid } from 'uid/secure'
 import * as z from 'zod/mini'
 
+import api from '@/lib/api'
 import redis from '@/lib/redis'
 
 const { SERVICE_NAME: prefix } = process.env
@@ -14,7 +15,7 @@ const schema = z.object({
 
 const thirtyDays = 30 * 24 * 60 * 60
 
-export const POST = async (request: Request): Promise<Response> => {
+export const POST = api(async (request: Request): Promise<Response> => {
   const { yurl } = schema.parse(await request.json())
 
   let tiny = await redis.get<string>(`${prefix}|long|${yurl}`)
@@ -29,4 +30,4 @@ export const POST = async (request: Request): Promise<Response> => {
   }
 
   return Response.json({ tiny })
-}
+})
