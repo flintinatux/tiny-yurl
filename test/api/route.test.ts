@@ -17,10 +17,6 @@ const req = (yurl: string): Request =>
     body: JSON.stringify({ yurl })
   })
 
-vi.mock('uid/secure', () => ({
-  uid: (length: number) => UID
-}))
-
 describe('POST /api/route', () => {
   let res;
 
@@ -48,8 +44,22 @@ describe('POST /api/route', () => {
     })
 
     it('should return a JSON response with a tiny URL', async () => {
-      const data = await res.json()
-      expect(data.tiny).toBe(`http://localhost:3000/t/${UID}`)
+      const { tiny } = await res.json()
+      expect(tiny).toMatch(/http:\/\/localhost:3000\/t\/[a-z0-9]{8}/)
+    })
+
+    describe('when the same URL is shortened again', () => {
+      let firstTiny
+
+      beforeEach(async () => {
+        firstTiny = (await res.json()).tiny
+        res = await POST(req('https://domain.com/path'))
+      })
+
+      it('should return the same tiny URL', async () => {
+        const { tiny } = await res.json()
+        expect(tiny).toBe(firstTiny)
+      })
     })
   })
 })
