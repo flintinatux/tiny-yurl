@@ -21,7 +21,9 @@ export const POST = api(async (request: Request): Promise<Response> => {
   let tiny = await redis.get<string>(`${prefix}|long|${yurl}`)
 
   if (!tiny) {
-    tiny = `${request.headers.get('origin')}/t/${uid(8)}`
+    const origin = request.headers.get('origin') || request.headers.get('test-origin')
+
+    tiny = `${origin}/t/${uid(8)}`
 
     await redis.multi()
       .set(`${prefix}|long|${yurl}`, tiny, { ex: thirtyDays })
