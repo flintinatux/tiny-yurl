@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { Request } from '@whatwg-node/fetch'
 
 import { POST } from '@/app/api/shorten/route'
@@ -17,10 +17,10 @@ const req = (yurl: string): Request =>
   })
 
 describe('POST /api/route', () => {
-  let res;
+  let res
 
   beforeEach(async () => {
-    await redis.flushdb();
+    await redis.flushdb()
   })
 
   describe('with an invalid URL', () => {
