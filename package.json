@@ -13,7 +13,7 @@
   "dependencies": {
     "@upstash/redis": "^1.35.1",
     "clipboard": "^2.0.11",
-    "next": "15.3.5",
+    "next": "16.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "swr": "^2.3.4",
@@ -29,7 +29,7 @@
     "@types/react-dom": "^19",
     "@whatwg-node/fetch": "^0.10.9",
     "eslint": "^9",
-    "eslint-config-next": "15.3.5",
+    "eslint-config-next": "16.1.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.4"
