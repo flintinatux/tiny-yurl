@@ -33,7 +33,7 @@ export default function FAQs() {
 
       <details open className="my-1">
         <summary className="font-semibold">Who are you?</summary>
-        <p className="my-1 px-1">I'm <strong>Scott McCormack</strong>, and I make apps that are beautiful inside and out.  If you need me, I'll be <a className="text-blue-700 hover:text-blue-800 underline" href="https://github.com/flintinatux" target="_blank" rel="noopener noreferrer">over here</a> pushing this big green <span className="bg-green-700 px-[6px] py-[2px] rounded text-white">Merge</span> button...</p>
+        <p className="my-1 px-1">I'm <strong>Scott McCormack</strong>, and I make apps that are beautiful inside and out.  If you need me, I'll be <a className="text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline" href="https://github.com/flintinatux" target="_blank" rel="noopener noreferrer">over here</a> pushing this big green <span className="bg-green-700 dark:bg-green-600 px-[6px] py-[2px] rounded text-white">Merge</span> button...</p>
       </details>
     </section>
   )

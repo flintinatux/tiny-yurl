@@ -1,10 +1,12 @@
 import FAQs from '@/components/FAQs'
 import Shortener from '@/components/Shortener'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default function Home() {
   return (
     <main>
-      <section className="bg-neutral-200 mt-3 mx-auto p-3 rounded-lg w-xl">
+      <ThemeToggle />
+      <section className="bg-neutral-200 dark:bg-neutral-800 mt-3 mx-auto p-3 rounded-lg w-xl">
         <h1 className="font-bold text-4xl text-center">😜 tiny-yurl</h1>
         <p className="italic my-2 text-center">Makes all your yurls the tiniest of tiny.</p>
         <Shortener />

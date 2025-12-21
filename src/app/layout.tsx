@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist_Mono, Noto_Sans } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 
 import './globals.css'
 
@@ -24,14 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       </head>
       <body
         className={`${sans.variable} ${mono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
