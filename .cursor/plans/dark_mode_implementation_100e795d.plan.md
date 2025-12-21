@@ -92,5 +92,3 @@ Update [`src/components/FAQs.tsx`](src/components/FAQs.tsx):
 ## Testing Considerations
 
 - Verify theme persists across page refreshes
-- Test system preference detection
-- Verify all components have appropriate contrast in dark mode
