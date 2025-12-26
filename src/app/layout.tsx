@@ -6,12 +6,12 @@ import './globals.css'
 
 const sans = Noto_Sans({
   variable: '--font-noto-sans',
-  subsets: ['latin'],
+  subsets: [ 'latin' ],
 })
 
 const mono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin'],
+  subsets: [ 'latin' ],
 })
 
 export const metadata: Metadata = {

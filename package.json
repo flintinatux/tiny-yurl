@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "test": "dotenvx run -f .env.test -- vitest --reporter=dot",
     "test:ci": "vitest --reporter=verbose"
   },
@@ -23,14 +23,13 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
-    "@dotenvx/dotenvx": "^1.48.3",
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+      "@dotenvx/dotenvx": "^1.48.3",
+      "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@whatwg-node/fetch": "^0.10.9",
-    "eslint": "^9",
+      "eslint": "^8.57.0",
     "eslint-config-next": "16.1.0",
     "tailwindcss": "^4",
     "typescript": "^5",
