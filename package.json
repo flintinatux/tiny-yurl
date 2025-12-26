@@ -30,7 +30,6 @@
     "@types/react-dom": "^19",
     "@whatwg-node/fetch": "^0.10.9",
       "eslint": "^8.57.0",
-    "eslint-config-next": "16.1.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.4"
