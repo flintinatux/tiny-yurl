@@ -1,0 +1,15 @@
+This project uses dark mode via next-themes and Tailwind CSS dark: variants.
+
+When creating or modifying components:
+- Always include dark mode variants for all color-related classes (backgrounds, text, borders, etc.)
+- Use the pattern: `light-class dark:dark-class` (e.g., `bg-white dark:bg-neutral-800`)
+- Follow the existing dark mode color scheme:
+  - Backgrounds: `bg-white` / `dark:bg-neutral-800` or `dark:bg-neutral-900`
+  - Text: Use `dark:text-foreground` or specific dark colors like `dark:text-gray-400`
+  - Links: `text-blue-700 dark:text-blue-400` with hover `hover:text-blue-800 dark:hover:text-blue-300`
+  - Buttons: Match existing button patterns with dark variants (e.g., `bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700`)
+  - Error text: `text-red-500 dark:text-red-400`
+  - Borders: `border-neutral-200 dark:border-neutral-700`
+- Check existing components (Shortener, TinyYurl, FAQs, ThemeToggle) for reference
+- Ensure all interactive elements have appropriate hover states for both light and dark modes
+

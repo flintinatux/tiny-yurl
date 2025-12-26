@@ -37,13 +37,13 @@ export default function Shortener() {
   return (
     <Fragment>
       <form className="flex mt-2" action={shorten}>
-        <input className="bg-white grow-2 px-1 py-0.5 rounded-l-lg" name="longYurl" onChange={updateYurl} placeholder="Long yurl" type="text" value={yurl}/>
-        <button className="bg-blue-700 px-1 py-0.5 rounded-r-lg shrink-0 text-white" type="submit">Shorten</button>
+        <input className="bg-white dark:bg-neutral-900 dark:text-foreground grow-2 px-1 py-0.5 rounded-l-lg" name="longYurl" onChange={updateYurl} placeholder="Long yurl" type="text" value={yurl}/>
+        <button className="bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 px-1 py-0.5 rounded-r-lg shrink-0 text-white" type="submit">Shorten</button>
       </form>
 
       {
         error && <div className="mt-1">
-          <p className="text-sm text-red-500">{error}</p>
+          <p className="text-sm text-red-500 dark:text-red-400">{error}</p>
         </div>
       }
 
