@@ -23,13 +23,16 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
-      "@dotenvx/dotenvx": "^1.48.3",
-      "@tailwindcss/postcss": "^4",
+    "@dotenvx/dotenvx": "^1.48.3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript-eslint/parser": "^8.50.1",
     "@whatwg-node/fetch": "^0.10.9",
-      "eslint": "^8.57.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.4"

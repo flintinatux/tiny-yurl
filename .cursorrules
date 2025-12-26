@@ -13,3 +13,7 @@ When creating or modifying components:
 - Check existing components (Shortener, TinyYurl, FAQs, ThemeToggle) for reference
 - Ensure all interactive elements have appropriate hover states for both light and dark modes
 
+Code quality workflow:
+- After code changes, always check linting (`npm run lint`) and run tests (`npm run test`)
+- Fix linting errors immediately
+- For test failures: debug, analyze root causes, and propose solutions before attempting fixes
